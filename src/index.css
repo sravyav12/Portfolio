@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  @apply bg-custom-bg text-custom-text;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(80, 70, 84, 0.1) 60px,
+    transparent 400px
+  );
+  z-index: 0;
+  transition: background 0.1s ease;
+}
+
+.underline-hover {
+  position: relative;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: theme('colors.custom-accent');
+  transition: width 0.3s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+.nav-link.active .nav-indicator {
+  @apply w-16 bg-slate-200;
+}
+
+.nav-link.active .nav-text {
+  @apply text-slate-200;
+}
+
+.section-container {
+  opacity: 0;
+}
+
+.section-container.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.project-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: theme('colors.custom-accent');
+  box-shadow: 0 10px 25px -5px rgba(100, 255, 218, 0.1);
+}
