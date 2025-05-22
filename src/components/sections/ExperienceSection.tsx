@@ -137,9 +137,7 @@ const ExperienceSection = () => {
           <ExperienceCard key={idx} experience={exp} />
         ))}
 
-        <a href="/Portfolio/Sravya_Vaddi_Resume.pdf"
-        target="_blank"
-        rel="noreferrer"
+        <a href="/Portfolio/Sravya_Vaddi_Resume.pdf" target="_blank" rel="noreferrer"
         className="group inline-flex items-center text-custom-text hover:text-custom-accent transition-colors duration-300">
           <span>View Full Resume</span>
           <ExternalLink size={16}
