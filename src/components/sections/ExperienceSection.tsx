@@ -12,15 +12,15 @@ interface ExperienceProps {
 
 const experiences: ExperienceProps[] = [
   {
-    date: "Sep 2024 — Present",
-    company: "MTX Group Inc",
-    title: "Salesforce Developer Intern",
-    url: "https://www.mtxb2b.com/",
+    date: "Sep 2024 — May 2025",
+    company: "Singular Analysts Inc",
+    title: "Software Engineer",
+    url: "https://singularanalysts.com/",
     description: "Built scalable pipelines and automated fault classification for wind turbines using NLP, FastAPI, and real-time monitoring dashboards.",
     skills: ["Python", "FastAPI", "NLP"]
   },
   {
-    date: "Jun 2020 — Oct 2021",
+    date: "May 2023 — Aug 2023",
     company: "MTX Group Inc",
     title: "Salesforce Developer Intern",
     url: "https://www.mtxb2b.com/",
@@ -28,18 +28,26 @@ const experiences: ExperienceProps[] = [
     skills: ["Scikit-learn", "FastAPI", "NLP"]
   },
   {
-    date: "Aug 2019 — May 2020",
-    company: "MTX Group Inc",
-    title: "Salesforce Developer Intern",
-    url: "https://www.mtxb2b.com/",
+    date: "Oct 2020 — Oct 2021",
+    company: "Cognizant Technology Solutions",
+    title: "Programmer Analyst",
+    url: "https://www.cognizant.com/us/en/about-cognizant/contact-us",
     description: "Designed and developed responsive web UIs, created RESTful APIs, and participated in weekly UAT demos for clients using JavaScript and jQuery.",
     skills: ["JavaScript", "HTML", "jQuery"]
   },
   {
-    date: "May 2023 — Aug 2023",
-    company: "MTX Group Inc",
-    title: "Salesforce Developer Intern",
-    url: "https://www.mtxb2b.com/",
+    date: "Apr 2020 — Sep 2020",
+    company: "AccrueSoft Services ",
+    title: "Web Developer",
+    url: "https://www.accruesoft.com/",
+    description: "Designed and developed responsive web UIs, created RESTful APIs, and participated in weekly UAT demos for clients using JavaScript and jQuery.",
+    skills: ["JavaScript", "HTML", "jQuery"]
+  },
+    {
+    date: "Dec 2019 — Apr 2020",
+    company: "Cognizant Technology Solutions",
+    title: "Programmer Analyst Trainee",
+    url: "https://www.cognizant.com/us/en/about-cognizant/contact-us",
     description: "Designed and developed responsive web UIs, created RESTful APIs, and participated in weekly UAT demos for clients using JavaScript and jQuery.",
     skills: ["JavaScript", "HTML", "jQuery"]
   },
@@ -129,7 +137,7 @@ const ExperienceSection = () => {
           <ExperienceCard key={idx} experience={exp} />
         ))}
 
-        <a href="/Sravya_Vaddi_Resume.pdf"
+        <a href="/Portfolio/Sravya_Vaddi_Resume.pdf"
         target="_blank"
         rel="noreferrer"
         className="group inline-flex items-center text-custom-text hover:text-custom-accent transition-colors duration-300">

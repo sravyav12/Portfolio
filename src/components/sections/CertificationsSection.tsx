@@ -7,14 +7,14 @@ const certifications = [
     description: "Verified cloud computing expertise and understanding of the AWS platform.",
     issuer: "Amazon Web Services",
     year: "2023",
-    url: "https://www.linkedin.com/notifications/?filter=all",
+    url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/7bb87da6776d4c278aede31bd41a0c5b",
   },
   {
     title: "Salesforce Platform Developer I",
     description: "Certified platform developer with skills in customizing applications using declarative capabilities.",
     issuer: "Salesforce",
     year: "2022",
-    url: "https://www.linkedin.com/notifications/?filter=all",
+    url: "/Portfolio/Cert4780737_PlatformDeveloperI_20240821.pdf"
   },
 ];
 
