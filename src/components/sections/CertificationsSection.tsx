@@ -1,4 +1,22 @@
 import { useEffect, useRef } from 'react';
+import { ExternalLink } from 'lucide-react';
+
+const certifications = [
+  {
+    title: "AWS Certified Cloud Practitioner",
+    description: "Verified cloud computing expertise and understanding of the AWS platform.",
+    issuer: "Amazon Web Services",
+    year: "2023",
+    url: "https://www.linkedin.com/notifications/?filter=all",
+  },
+  {
+    title: "Salesforce Platform Developer I",
+    description: "Certified platform developer with skills in customizing applications using declarative capabilities.",
+    issuer: "Salesforce",
+    year: "2022",
+    url: "https://www.linkedin.com/notifications/?filter=all",
+  },
+];
 
 const CertificationsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -27,23 +45,33 @@ const CertificationsSection = () => {
   return (
     <section id="certifications" ref={sectionRef} className="section-container">
       <div className="section-content">
-        <h2 className="text-3xl font-semibold mb-4 text-custom-accent"></h2>
-        <div className="space-y-4">
-          <div className="group relative max-w-3xl mb-4 rounded-2xl bg-[#112240] transition-all duration-300 ease-in-out p-4 border border-transparent hover:border-white/10 hover:bg-[#1c2235]/80 hover:shadow-md">
-            <h3 className="text-xl font-bold mb-2 text-custom-accent">AWS Certified Cloud Practitioner</h3>
-            <p className="text-sm text-custom-subtle mb-2">
-              Verified cloud computing expertise and understanding of the AWS platform.
-            </p>
-            <p className="text-xs text-gray-400">Issued by Amazon Web Services · 2023</p>
-          </div>
-          
-          <div className="group relative max-w-3xl mb-4 rounded-2xl bg-[#112240] transition-all duration-300 ease-in-out p-4 border border-transparent hover:border-white/10 hover:bg-[#1c2235]/80 hover:shadow-md">
-            <h3 className="text-xl font-bold mb-2 text-custom-accent">Salesforce Platform Developer I</h3>
-            <p className="text-sm text-custom-subtle mb-2">
-              Certified platform developer with skills in customizing applications using declarative capabilities.
-            </p>
-            <p className="text-xs text-gray-400">Issued by Salesforce · 2022</p>
-          </div>
+        <div className="space-y-6">
+          {certifications.map((cert, idx) => (
+            <a
+              key={idx}
+              href={cert.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group block max-w-3xl rounded-lg bg-[#0a192f] transition-all duration-300 ease-in-out p-6 border border-transparent hover:border-white/10 hover:bg-[#1c2235]/80 hover:shadow-md hover:backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-base sm:text-lg font-medium text-white group-hover:text-custom-accent transition-colors duration-300">
+                  {cert.title}
+                </h3>
+                <ExternalLink
+                  size={16}
+                  className="text-white group-hover:text-custom-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </div>
+
+              <p className="text-sm text-custom-subtle mb-2">
+                {cert.description}
+              </p>
+              <p className="text-xs text-gray-400">
+                Issued by {cert.issuer} · {cert.year}
+              </p>
+            </a>
+          ))}
         </div>
       </div>
     </section>

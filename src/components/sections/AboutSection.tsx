@@ -29,7 +29,7 @@ const AboutSection = () => {
       <div className="section-content">
         <h2 className="text-3xl font-semibold mb-4 text-custom-accent"></h2>
         <p className="text-custom-subtle">
-          Hey there! I am Sravya Vaddi! I am a Masters Graduate with a major in Computer Science from{' '}
+          Hey there! I am Kishore Muchintala! I am a Masters Graduate with a major in Data Science from{' '}
           <a 
             href="https://www.albany.edu/" 
             target="_blank" 

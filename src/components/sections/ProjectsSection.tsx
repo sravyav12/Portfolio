@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
+import { ExternalLink } from 'lucide-react';
 
 interface ProjectProps {
   title: string;
   description: string;
   technologies: string[];
   demoLink: string;
-  githubLink: string;
+  imageUrl: string; // new image field
 }
 
 const projects: ProjectProps[] = [
@@ -13,31 +14,63 @@ const projects: ProjectProps[] = [
     title: "Fault Classifier",
     description: "ML + NLP-based wind turbine fault classifier that reduced downtime by 40%.",
     technologies: ["Python", "Scikit-learn", "NLTK"],
-    demoLink: "#",
-    githubLink: "#"
+    demoLink: "https://your-fault-classifier.com",
+    imageUrl: "https://via.placeholder.com/100x100?text=🧠"
   },
   {
     title: "EchoVerse",
     description: "A real-time AI-powered bot to preserve meaningful conversations with loved ones.",
     technologies: ["Python", "FastAPI", "WebSockets", "GPT-4"],
-    demoLink: "#",
-    githubLink: "#"
+    demoLink: "https://your-echoverse-demo.com",
+    imageUrl: "https://via.placeholder.com/100x100?text=💬"
   }
 ];
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <div className="project-card bg-[#112240] p-5 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition border border-transparent hover:border-custom-accent">
-      <h3 className="text-xl font-bold mb-2 text-custom-accent">{project.title}</h3>
-      <p className="text-sm text-custom-subtle mb-3">
-        {project.description}
-      </p>
-      <p className="text-xs text-gray-400 mb-2">{project.technologies.join(' · ')}</p>
-      <div className="text-sm space-x-3">
-        <a href={project.demoLink} className="underline-hover">🔗 Live</a>
-        <a href={project.githubLink} className="underline-hover">💻 GitHub</a>
+    <a
+      href={project.demoLink}
+      target="_blank"
+      rel="noreferrer"
+      className="group block relative max-w-4xl mb-8 rounded-lg bg-[#0a192f] p-6 transition-all duration-300 hover:bg-[#1c2235]/80 flex flex-col md:flex-row md:items-center md:gap-8 hover:shadow-md"
+    >
+      {/* Left: Image */}
+      <div className="md:w-1/4 w-full mb-4 md:mb-0 flex justify-start md:justify-end">
+        <img
+          src={project.imageUrl}
+          alt={project.title}
+          className="w-20 h-20 rounded-md object-cover shadow-sm"
+        />
       </div>
-    </div>
+
+      {/* Right: Content */}
+      <div className="md:w-3/4 w-full">
+        <div className="flex items-center gap-2 mb-2">
+          <h3 className="text-base sm:text-lg text-white transition-colors duration-300 group-hover:text-custom-accent font-normal">
+            {project.title}
+          </h3>
+          <ExternalLink
+            size={16}
+            className="text-white group-hover:text-custom-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          />
+        </div>
+
+        <p className="text-sm text-slate-400 leading-relaxed mb-4">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech, idx) => (
+            <span
+              key={idx}
+              className="bg-[#1f2937] text-custom-accent text-xs font-normal px-3 py-1 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </a>
   );
 };
 
@@ -68,13 +101,9 @@ const ProjectsSection = () => {
   return (
     <section id="projects" ref={sectionRef} className="section-container">
       <div className="section-content">
-        <h2 className="text-3xl font-semibold mb-8 text-custom-accent"></h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
-          ))}
-        </div>
+        {projects.map((project, idx) => (
+          <ProjectCard key={idx} project={project} />
+        ))}
       </div>
     </section>
   );

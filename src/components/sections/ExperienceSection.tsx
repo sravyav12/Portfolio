@@ -45,36 +45,56 @@ const experiences: ExperienceProps[] = [
   },
 ];
 
+
 const ExperienceCard = ({ experience }: { experience: ExperienceProps }) => {
   return (
-    <div className="group relative max-w-3xl mb-8 rounded-2xl bg-[#0a192f] transition-all duration-300 ease-in-out p-6 border border-transparent hover:border-white/10 hover:bg-[#1c2235]/80 hover:shadow-md hover:backdrop-blur-sm">
-      <div className="text-sm text-slate-400 font-medium mb-2">{experience.date}</div>
-      <div className="flex items-center gap-2 mb-2">
-        <h3 className="text-base sm:text-lg font-medium transition-colors duration-300">
-          <span className="group-hover:text-custom-accent transition-colors duration-300">
-            <a href={experience.url} target="_blank" rel="noreferrer">
-              {experience.title} · {experience.company}
-            </a>
-          </span>
-        </h3>
-        
-        <a href={experience.url} target="_blank" rel="noreferrer" className="inline-block transition-transform transition-colors duration-300 text-custom-text group-hover:text-custom-accent group-hover:translate-x-1 group-hover:-translate-y-1">
-          <ExternalLink size={16} />
-        </a>
+    <a
+      href={experience.url}
+      target="_blank"
+      rel="noreferrer"
+      className="group block relative max-w-4xl mb-8 rounded-lg bg-[#0a192f] p-6 transition-all duration-300 hover:bg-[#1c2235]/80 flex flex-col md:flex-row md:items-center md:gap-8 hover:shadow-md"
+    >
+      {/* Left: Date */}
+      <div className="md:w-1/4 w-full mb-4 md:mb-0 flex justify-start md:justify-end">
+        <div className="text-xs text-slate-400 tracking-widest uppercase md:text-right whitespace-nowrap pt-[2px]">
+          {experience.date}
+        </div>
       </div>
-      <p className="text-sm text-custom-subtle leading-relaxed mb-4">
-        {experience.description}
-      </p>
-      <div className="flex flex-wrap gap-2 mt-2">
-        {experience.skills.map((skill, idx) => (
-          <span key={idx} className="bg-[#1e293b] text-custom-accent text-xs font-medium px-3 py-1 rounded-full">
-            {skill}
-          </span>
-        ))}
+
+      {/* Right: Content */}
+      <div className="md:w-3/4 w-full">
+        <div className="flex items-center gap-2 mb-2">
+          <h3 className="text-base sm:text-lg text-white transition-colors duration-300 group-hover:text-custom-accent font-normal">
+            {experience.title} · {experience.company}
+          </h3>
+          <ExternalLink
+            size={16}
+            className="text-white group-hover:text-custom-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          />
+        </div>
+
+        <p className="text-sm text-slate-400 leading-relaxed mb-4">
+          {experience.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {experience.skills.map((skill, idx) => (
+            <span
+              key={idx}
+              className="bg-[#1f2937] text-custom-accent text-xs font-normal px-3 py-1 rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    </a>
   );
 };
+
+
+
+
 
 const ExperienceSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -109,12 +129,15 @@ const ExperienceSection = () => {
           <ExperienceCard key={idx} experience={exp} />
         ))}
 
-        <a href="/Sravya_Vaddi_Resume.pdf" target="_blank" className="group inline-flex items-center text-custom-text hover:text-custom-accent transition-colors duration-300">
+        <a href="/Sravya_Vaddi_Resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="group inline-flex items-center text-custom-text hover:text-custom-accent transition-colors duration-300">
           <span>View Full Resume</span>
-          <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-            ↗
-          </span>
-        </a>
+          <ExternalLink size={16}
+          className="ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"/>
+          </a>
+
       </div>
     </section>
   );
