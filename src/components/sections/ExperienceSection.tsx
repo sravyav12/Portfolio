@@ -16,40 +16,40 @@ const experiences: ExperienceProps[] = [
     company: "Singular Analysts Inc",
     title: "Software Engineer",
     url: "https://singularanalysts.com/",
-    description: "Built scalable pipelines and automated fault classification for wind turbines using NLP, FastAPI, and real-time monitoring dashboards.",
-    skills: ["Python", "FastAPI", "NLP"]
+    description: "Crafted accessible, scalable web applications by developing RESTful APIs (Spring Boot, Swagger) and building ReactJS frontends aligned with WCAG standards. Improved backend performance using PostgreSQL and SQLAlchemy, and automated CI/CD workflows via Jenkins and Docker for reliable deployments.",
+    skills: ["Springboot", "React.js", "PostgreSQL", "Docker"]
   },
   {
     date: "May 2023 — Aug 2023",
     company: "MTX Group Inc",
     title: "Salesforce Developer Intern",
     url: "https://www.mtxb2b.com/",
-    description: "Built fault classification models and internal tools using FastAPI and NLP; improved automation for turbine event categorization and reporting.",
-    skills: ["Scikit-learn", "FastAPI", "NLP"]
+    description: "Developed Lightning Web Components and Apex-based workflows to streamline approval processes and enhance user productivity. Built dashboards and reports delivering real-time insights, enabling data-driven decisions for internal stakeholders.",
+    skills: ["Salesforce Admin", "Apex", "Lightning Web Components", "WorkFlows"]
   },
   {
     date: "Oct 2020 — Oct 2021",
     company: "Cognizant Technology Solutions",
     title: "Programmer Analyst",
     url: "https://www.cognizant.com/us/en/about-cognizant/contact-us",
-    description: "Designed and developed responsive web UIs, created RESTful APIs, and participated in weekly UAT demos for clients using JavaScript and jQuery.",
-    skills: ["JavaScript", "HTML", "jQuery"]
+    description: "Engineered secure, cloud-native backend systems with AWS Lambda, Express.js, and PostgreSQL, and integrated WebRTC/Peer.js for real-time video features. Enhanced performance using API Gateway caching, Dockerized microservices with Kubernetes, and reduced costs through automation and TDD practices.",
+    skills: ["AWS Lambda", "Express.js", "WebRTC", "Kubernetes"]
   },
   {
     date: "Apr 2020 — Sep 2020",
     company: "AccrueSoft Services ",
     title: "Web Developer",
     url: "https://www.accruesoft.com/",
-    description: "Designed and developed responsive web UIs, created RESTful APIs, and participated in weekly UAT demos for clients using JavaScript and jQuery.",
-    skills: ["JavaScript", "HTML", "jQuery"]
+    description: "Built responsive frontends with React, Angular, and Bootstrap, while developing secure server-side apps using Flask, Express.js, and TypeScript. Improved uptime and deployment stability through zero-downtime Kubernetes upgrades and Docker volume separation.",    
+    skills: ["TypeScript", "Flask", "Angular","Jest"]
   },
     {
     date: "Dec 2019 — Apr 2020",
     company: "Cognizant Technology Solutions",
     title: "Programmer Analyst Trainee",
     url: "https://www.cognizant.com/us/en/about-cognizant/contact-us",
-    description: "Designed and developed responsive web UIs, created RESTful APIs, and participated in weekly UAT demos for clients using JavaScript and jQuery.",
-    skills: ["JavaScript", "HTML", "jQuery"]
+    description: "Contributed to internal tool development by building Flask-based APIs and SQL-driven reports, while assisting in UI integration using HTML, CSS, and JavaScript. Gained hands-on experience with Agile workflows, Postman testing, and documentation practices in a collaborative development environment.",    
+    skills: ["JavaScript", "HTML", "CSS", "Jinja2"]
   },
 ];
 
